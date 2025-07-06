@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha’ban</title>
+    <style>
+      /* Scoped styles specific to this page */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Garamond", Times, serif;
+        height: 100vh;
+        background-color: #000000;
+        text-align: center;
+      }
+
+      header h1 {
+        position: absolute;
+        text-align: center;
+        top: 5vh;
+        transform: translateX(-50%);
+        left: 50%;
+        font-size: 2.5em;
+        color: #f4f4f4;
+        z-index: 2;
+      }
+
+      /* Container to hold video and overlayed text */
+      .video-container {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Overlayed text */
+      .delayed-text {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: "Garamond", Times, serif;
+        font-size: 1.5em;
+        opacity: 0;
+        transition: opacity 1s ease;
+        text-align: center;
+        width: 100%;
+      }
+
+      #text1 {
+        top: 20%; /* Slightly lower */
+      }
+      /* Optional - Adjust specific text if you need them in different positions */
+      #text2 {
+        top: 85%; /* Slightly lower */
+      }
+      #text3 {
+        top: 95%; /* Slightly lower */
+        color: red;
+        font-style: italic;
+      }
+
+      .menu {
+        position: absolute;
+        padding: 5px;
+        top: 5px;
+        left: 5px;
+        z-index: 20;
+        font-size: 1.6em;
+        font-family: serif;
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      .tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: red;
+  font-style: italic;
+  text-decoration: underline dotted;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.line {
+      position: absolute;
+      color: #a0a0a0;
+      font-size: 1.5em;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+  <div class="menu">
+        <a href="Rajab.html">◅</a>
+    <a href="index.html"> ▩ </a>
+    <a href="Ramadhan.html">▻</a>
+        </div>
+  
+    <header>
+        <h1>Sha’ban</h1>
+    </header>
+    <main>
+        <!-- Centered looping video -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="./videos/Sha_ban.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Text that appears with delay -->
+        <div id="text1" class="delayed-text">Devour the verses of <span class="tooltip">Zooni
+          <span class="tooltiptext">A Kashmiri poet</span>
+        </span>, embody the passion of <span class="tooltip">Mir
+          <span class="tooltiptext">A Kashmiri poet</span>
+        </span> and set your desires loose but—</div>
+        <div id="text2" class="delayed-text">Never fall in love. <br>
+          Nothing is fair in love. <br>
+          No one’s safe in love. <br>
+          Love is not love. <br>
+          </div>
+      <div id="text3" class="delayed-text">Remember, for our hearts, there is no call for freedom. </div>
+    </main>
+
+    <script>
+        // Inline JavaScript to control text appearance
+        window.addEventListener('load', () => {
+            // Show first text after 3 seconds
+            setTimeout(() => {
+                document.getElementById('text1').style.opacity = 1;
+            }, 3000);
+
+            // Show second text after 6 seconds
+            setTimeout(() => {
+                document.getElementById('text2').style.opacity = 1;
+            }, 6000);
+          
+          setTimeout(() => {
+                document.getElementById('text3').style.opacity = 1;
+            }, 9000);
+
+        });
+
+        const lines = [
+    "love",
+    "love",
+    "love",
+    "love",
+    "love",
+    "love",
+    "love",
+    "love",
+    "love"
+  ];
+
+  function showLine(lineText) {
+    const line = document.createElement('div');
+    line.className = 'line';
+    line.textContent = lineText;
+
+    // Append first to measure its size
+    document.body.appendChild(line);
+    const rect = line.getBoundingClientRect();
+    const padding = 10;
+
+    // Calculate max left/top so it stays inside viewport
+    const maxLeft = window.innerWidth - rect.width - padding;
+    const maxTop = window.innerHeight - rect.height - padding;
+
+    const left = Math.random() * (maxLeft - padding) + padding;
+    const top = Math.random() * (maxTop - padding) + padding;
+
+    line.style.left = `${left}px`;
+    line.style.top = `${top}px`;
+
+    // Fade it in
+    setTimeout(() => {
+      line.style.opacity = 1;
+    }, 100);
+  }
+
+  const initialDelay = 6000; // 4 seconds
+
+lines.forEach((line, i) => {
+  setTimeout(() => {
+    showLine(line);
+  }, initialDelay + i * 1000);
+});
+    </script>
+</body>
+</html>

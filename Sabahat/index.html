@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1446 | Dagh, Doad, Dawah | Pain, Illness, Cure</title>
+    <style>
+      /* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #100D08;
+  font-family: "Garamond", Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header h1 {
+    color: #ffffff;
+  font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+  padding-bottom: 30px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 per row by default */
+    gap: 20px;
+    max-width: 1200px; /* widened to accommodate 4 cards */
+    width: 100%;
+}
+
+ /* Card styling */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CDAA66;
+  background-color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(200, 200, 200, 0.3); /* soft shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover effect */
+}
+      
+      .card:hover {
+    transform: translateY(-4px); /* lift up slightly */
+    box-shadow: 0 8px 16px rgba(200, 200, 200, 0.4); /* deeper shadow on hover */
+}
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+          argin-top: 100px;
+        }
+      
+      .card video {
+    width: 100%;
+    height: auto;
+    display: block;
+        padding-top: 50px;
+    object-fit: cover; /* Ensures it fills the box nicely */
+}
+
+        /* Overlay text styling */
+        .card-title {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;              /* Let it span the full card width */
+    padding: 0 10px;          /* Add small side padding if needed */
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;  
+        }
+      
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 per row on phones */
+    }
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        <h1>1446 | Dagh, Doad, Dawah | Pain, Illness, Cure</h1>
+    </header>
+    <main>
+        <div class="card-container">
+      
+          <div class="card"><a href="Muharram.html">
+  <video src="./videos/Muharram.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Muharram</div></div>
+          
+            <div class="card"><a href="Safar.html">
+              <video src="./videos/Safar.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Safar</div></div>
+          
+            <div class="card"><a href="Rabi-al-awwal.html">
+              <video src="./videos/Rabi_Al_Awwal.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Rabi’ Al-Awwal</div></div>
+          
+            <div class="card"><a href="Rabi-al-thani.html">
+              <video src="./videos/Rabi_Al_Thani.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Rabi’ Al-Thani</div></div>
+          
+            <div class="card"><a href="Jumada-al-awwal.html">
+              <video src="./videos/Jumada_al_Awwal.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Jumada al-Awwal</div></div>
+          
+            <div class="card"><a href="Jumada-al-thani.html">
+              <video src="./videos/Jumada_al_Thani.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Jumada al-Thani</div></div>
+          
+            <div class="card"><a href="Rajab.html">
+              <video src="./videos/Rajab.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Rajab</div></div>
+          
+            <div class="card"><a href="Sha-ban.html">
+              <video src="./videos/Sha_ban.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Sha’ban</div></div>
+          
+            <div class="card"><a href="Ramadhan.html">
+              <video src="./videos/Ramadhan.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Ramadhan</div></div>
+          
+            <div class="card"><a href="Shawaal.html">
+              <video src="./videos/Shawaal.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Shawaal</div></div>
+          
+            <div class="card"><a href="Dhu-al-qadah.html">
+              <video src="./videos/Dhu_al_Qadah.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Dhu al-Qadah</div></div>
+          
+            <div class="card"><a href="Dhu-al-hijjah.html">
+              <video src="./videos/Dhu_al_Hijjah.mp4" autoplay muted loop playsinline></video></a>
+          <div class="card-title">Dhu al-Hijjah</div></div>
+       
+      </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawaal</title>
+    <style>
+      /* Scoped styles specific to this page */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Garamond", Times, serif;
+        height: 100vh;
+        background-color: #000000;
+        text-align: center;
+      }
+
+      header h1 {
+        position: absolute;
+        text-align: center;
+        top: 5vh;
+        transform: translateX(-50%);
+        left: 50%;
+        font-size: 2.5em;
+        color: #f4f4f4;
+        z-index: 2;
+      }
+
+      /* Container to hold video and overlayed text */
+      .video-container {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Overlayed text */
+      .delayed-text {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: "Garamond", Times, serif;
+        font-size: 1.5em;
+        opacity: 0;
+        transition: opacity 1s ease;
+        text-align: center;
+        width: 100%;
+      }
+
+      #text1 {
+        top: 20%; /* Slightly lower */
+      }
+      /* Optional - Adjust specific text if you need them in different positions */
+      #text2 {
+        top: 85%; /* Slightly lower */
+      }
+      #text3 {
+        top: 95%; /* Slightly lower */
+        color: red;
+        font-style: italic;
+      }
+
+      .menu {
+        position: absolute;
+        padding: 5px;
+        top: 5px;
+        left: 5px;
+        z-index: 20;
+        font-size: 1.6em;
+        font-family: serif;
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+  <div class="menu">
+        <a href="Ramadhan.html">◅</a>
+    <a href="index.html"> ▩ </a>
+    <a href="Dhu-al-qadah.html">▻</a>
+        </div>
+  
+    <header>
+        <h1>Shawaal</h1>
+    </header>
+    <main>
+        <!-- Centered looping video -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="./videos/Shawaal.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Text that appears with delay -->
+        <div id="text1" class="delayed-text">xxxx</div>
+        <div id="text2" class="delayed-text">xxxx</div>
+      <div id="text3" class="delayed-text">xxxx</div>
+    </main>
+
+    <script>
+        // Inline JavaScript to control text appearance
+        window.addEventListener('load', () => {
+            // Show first text after 3 seconds
+            setTimeout(() => {
+                document.getElementById('text1').style.opacity = 1;
+            }, 3000);
+
+            // Show second text after 6 seconds
+            setTimeout(() => {
+                document.getElementById('text2').style.opacity = 1;
+            }, 6000);
+          
+          setTimeout(() => {
+                document.getElementById('text3').style.opacity = 1;
+            }, 9000);
+
+        });
+    </script>
+</body>
+</html>
